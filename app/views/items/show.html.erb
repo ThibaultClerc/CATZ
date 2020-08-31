@@ -1,11 +1,25 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
 
-<p>C'est la page pour montrer les individual products</p>
+<div class="container mx-auto mt-5">
+  <div class="row mt-5 mx-auto bg-light" style="border-radius: 10px;">
+    <div class="event-haut row mt-3">
 
-<div class="container">
-  <h2 class="title"><% @item.title %></h2>
-    <div class="description"><% @item.description %></div>
-    <div class="price"><% item.price %></div>
-    <div class="catpic"><% item.image_url %></div>
+      <div class="col-1 ">
+      </div>
+
+      <div class="image-haut-event col-4 mr-5" >
+        <img src="<%= @item.image_url %>" width="100%" height="90%" style="border-radius: 10px;"  alt="">
+      </div>
+
+      <div class="event-text col-6">
+        <h3><%= @item.title %></h3>
+        <h5 class="mt-3 mb-3"><%= @item.price %> Euros</h5>
+        <p><%= @item.description %></p>
+
+        <hr>
+
+        <button type="button" class="btn btn-primary mx-auto ml-3">Acheter</button>
+      </div>
+
+    </div>
+  </div>
 </div>
