@@ -3,3 +3,25 @@
 
 
 <p>Ceci est le page ou la liste de products se trouve.</p> 
+
+<h2 class="title">Item List</h2>
+<h4 class="subtitle">Check out all out products!</h4>
+
+<div class="container">
+  <div class="card-group">
+    <% @items.each do |item|%>
+      <div class="col-md-3 col-sm-4">
+        <div class="card mb-3 event-card rounded">
+          <div class="event-card-image-container h-100">
+            <img style="height: 170px; width: 100%; display: block;" src="https://picsum.photos/170" alt="Card image">
+            <button type="button" id="go" class="btn btn-default btn-circle"><i class="fa fa-check"></i></button>
+            <button type="button" id="love" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i></button>
+          </div>
+        <div class="card-body">
+          <h5 class="card-text text-warning mt-3"><%= item.title %></h5>
+          <h3 class="text-truncate"><%= link_to "#{item.description}", item_path(item.id)%></h3>  
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
