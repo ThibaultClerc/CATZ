@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2020_09_01_083226) do
 
   create_table "orders", force: :cascade do |t|
     t.string "item_name"
-    t.text "description"
     t.integer "price"
     t.integer "quantity"
     t.string "payment_method"
