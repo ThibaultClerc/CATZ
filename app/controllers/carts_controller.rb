@@ -5,6 +5,10 @@ class CartsController < ApplicationController
   def show
     @user = current_user
     @cart = Cart.find(params[:id])
+    @total_price = 0
+    @cart.items.each do |item|
+      @total_price += item.price 
+    end
   end
 
   def update
