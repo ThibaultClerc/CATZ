@@ -1,3 +1,35 @@
-<h1><%= @user.cart %> </h1>
+<div class="jumbotron text-center">
+  <h1 class="display-3">Mon panier</h1>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-8 bg-light p-0 d-inline-flex">
+        <table class="table table-hover">
+          <tbody>
+            <tr class="table-active">
+              <th scope="row">Photo</th>
+              <td>Titre</td>
+              <td>Prix</td>
+            </tr>
+              <% @cart.items.each do |item| %>
+                <tr>
+                  <th scope="row"><img src="<%= item.image_url %>"  alt="" class="w-50 h-auto rounded"></th>
+                  <td><h3><%= item.title %></h3></td>
+                  <td><h5 class="mt-3 mb-3"><%= item.price %> €</h5></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table> 
+      </div>
+      <div class="col-4 bg-light p-4 align-content-between flex-wrap">
+        <h3><strong>Ma commande</h3>
+      </div>
+    </div>
 
-<p>CART SHOW </p>
+    <div class="row border-bottom pt-3 pb-3 pl-0 pr-0 align-middle">
+      <div class="col-8 p-0 m-0"></div>
+      <div class="col-4 p-0 m-0">
+        <%= link_to "Commander", root_path, class: "btn btn-primary btn-lg w-100 h-100"%>
+      </div>
+    </div>
+</div>

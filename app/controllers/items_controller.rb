@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   def index
+
     @items = Item.all
   end
 
@@ -8,5 +9,5 @@ class ItemsController < ApplicationController
     puts "$" * 60
     puts @item
   end
-  
+
 end
