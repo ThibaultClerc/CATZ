@@ -1,0 +1,27 @@
+<div class="jumbotron cat-hero-index-image text-white" style="height: 700px;">
+  <div class="container text-center">
+    <h1 class="display-2">Catz Temple</h1>
+    <h1 class="lead">Pour l'amour des chats</h1>
+    <br>
+    <p class="">Le premier magasin de photos de chats au monde</p>
+    <p class="lead"></p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card-group">
+    <% @items.each do |item|%>
+      <div class="col-md-3 col-sm-4">
+        <div class="card mb-3 event-card rounded">
+          <div class="event-card-image-container h-100">
+            <img style="height: 170px; width: 100%; display: block;" src="<%= item.image_url %>" alt="Card image">
+          </div>
+        <div class="card-body">
+          <h5 class="card-text text-warning mt-3"><%= item.title %></h5>
+          <h3 class="text-truncate"><%= link_to "#{item.description}", item_path(item.id)%></h3>  
+        </div>
+      </div>
+      </div>
+    <% end %>
+  </div>
+</div>

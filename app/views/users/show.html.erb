@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row mt-5 pt-5">
+    <div class="col-3 text-right">
+      <div class="profile-pic">
+        <i data-toggle="modal" data-target="#changeProfilePicModal" class="fas fa-ellipsis-h three-dots-of-profile-pic"></i>
+        <img style="height:200px;" class="rounded-circle" src="https://avatars1.githubusercontent.com/u/63822323?s=460&v=4" alt="Card image">
+      </div>
+    </div>
+    <div class="col-9 pb-2">
+      <h2 class="display-4"><%= @user.first_name%> <%= @user.last_name%></h2>
+      <h5 class="font-weight-bold mb-2"><%= @user.email%> </h5>
+      <%= link_to "Modifier mon profil", edit_user_registration_path, class: "btn btn-outline-danger text-center" %>
+    </div>
+  </div>
+</div>

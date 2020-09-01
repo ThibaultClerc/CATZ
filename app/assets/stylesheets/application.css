@@ -14,3 +14,9 @@
  *= require_tree .
  *= require_self
  */
+
+.cat-hero-index-image {
+  background-image: url("main-cat-pic.jpg");
+  background-size: cover;
+  /* height: 100%; */
+}
