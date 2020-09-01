@@ -17,8 +17,7 @@
         <p><%= @item.description %></p>
 
         <hr>
-
-        <button type="button" class="btn btn-primary mx-auto ml-3">Acheter</button>
+        <%= link_to "Ajouter au panier", cart_path(current_user.id, :item_id => @item.id), method: :put, class: "btn btn-primary mx-auto ml-3" %>
       </div>
 
     </div>

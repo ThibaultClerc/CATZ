@@ -31,16 +31,6 @@ end
 
 puts "#{User.all.count} users created"
 
-i=1
-5.times do
-  Cart.create!(
-    user_id: i
-  )
-  i+=1
-end
-
-puts "#{Cart.all.count} carts created"
-
 j=1
 5.times do
   JoinTableItemCart.create!(
