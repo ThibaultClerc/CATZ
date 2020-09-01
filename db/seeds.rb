@@ -42,5 +42,26 @@ end
 
 puts "#{JoinTableItemCart.all.count} join_table_item_carts created"
 
+k = 1
+5.times do
+  Order.create(
+    user_id: k
+  )
+  k += 1
+end
+
+puts "#{Order.all.count} Orders have been created"
+
+l = 1
+5.times do
+  JoinTableItemOrder.create(
+    item_id: l,
+    order_id: l
+  )
+  l += 1
+end
+
+puts "#{JoinTableItemOrder.all.count} join_table_item_orders created"
 
 puts "SEED DONE"
+
