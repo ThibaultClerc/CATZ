@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_many :orders
 
-  after_create :create_cart
+  after_create :create_cart, :welcome_new_user
 
   def create_cart
     Cart.create(
@@ -14,5 +14,8 @@ class User < ApplicationRecord
     )
   end
 
+  def welcome_new_user
+    UserMailer.welcome_new_user(self).deliver_now
+  end
 
 end

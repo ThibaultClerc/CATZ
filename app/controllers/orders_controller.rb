@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @amount = order_params[:total_price]*100 # amount in cents
+    @amount = order_params[:total_price].to_i*100 # amount in cents
     @cart = Cart.find(order_params[:cart_id])
 
     customer = Stripe::Customer.create({
@@ -17,7 +17,7 @@ class OrdersController < ApplicationController
     })
     charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount.to_i,
+      amount: @amount,
       description: 'Rails Stripe customer',
       currency: 'eur',
       })
@@ -44,4 +44,3 @@ class OrdersController < ApplicationController
       params.permit(:cart_id, :total_price)
     end
 end
-
