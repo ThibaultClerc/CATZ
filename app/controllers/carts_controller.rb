@@ -14,7 +14,6 @@ class CartsController < ApplicationController
   def update
     @cart_of_user = User.find(current_user.id).cart
     @cart_of_user.items << Item.find(item_params[:item_id])
-    
   end
 
   private
