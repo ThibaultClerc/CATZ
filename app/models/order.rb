@@ -10,6 +10,7 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :join_table_item_orders
   has_many :items, through: :join_table_item_orders
+<<<<<<< HEAD
 
   private
 
@@ -17,4 +18,6 @@ class Order < ApplicationRecord
     OrderMailer.new_order_mail_to_client(self).deliver_now
   end
   
+=======
+>>>>>>> develop
 end

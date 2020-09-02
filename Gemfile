@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'table_print'
 gem 'faker'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'devise'
 gem 'activerecord-reset-pk-sequence'
 gem 'rails-erd'
