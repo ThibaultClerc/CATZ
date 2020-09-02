@@ -1,15 +1,39 @@
-<div class="container">
-  <div class="row mt-5 pt-5">
-    <div class="col-3 text-right">
-      <div class="profile-pic">
-        <i data-toggle="modal" data-target="#changeProfilePicModal" class="fas fa-ellipsis-h three-dots-of-profile-pic"></i>
-        <img style="height:200px;" class="rounded-circle" src="https://avatars1.githubusercontent.com/u/63822323?s=460&v=4" alt="Card image">
-      </div>
-    </div>
-    <div class="col-9 pb-2">
-      <h2 class="display-4"><%= @user.first_name%> <%= @user.last_name%></h2>
-      <h5 class="font-weight-bold mb-2"><%= @user.email%> </h5>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-3 mt-3">
+      <img style="height:200px;" class="rounded-circle" src="https://avatars1.githubusercontent.com/u/63822323?s=460&v=4" alt="Card image">
+      <h3 class="display-4"><%= current_user.first_name%> <%= current_user.last_name%></h3>
+      <h5 class="font-weight-bold mb-2"><%= current_user.email%> </h5>
       <%= link_to "Modifier mon profil", edit_user_registration_path, class: "btn btn-outline-danger text-center" %>
+    </div>  
+
+    <div class="col-md-9">
+      <h2 class="display-4 mb-3">Historique des commandes</h2>
+      <div class="md-form">
+        <input class="form-control mb-2" type="text" placeholder="Search" aria-label="Search">
+      </div>
+      <div>
+        <table class="table" style="table-layout: fixed;">
+          <thead>
+            <tr>
+              <th scope="col">Référence</th>
+              <th scope="col">Commande</th>
+              <th scope="col">Date</th>
+              <th scope="col">Prix</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% current_user.orders.sort.each do |order| %>
+              <tr class="table-light">
+                <th scope="row">#<%= order.id %></th>
+                <td class="text-truncate"><%= order.items.first.title %></td>
+                <td><%= order.created_at.strftime("%d/%m/%Y") %></td>
+                <td><%= order.price %> €</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table> 
+      </div>
     </div>
   </div>
 </div>
