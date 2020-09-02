@@ -8,7 +8,7 @@ class Order < ApplicationRecord
   # validates :quantity, presence: true
   # validates :payment_method, presence: true
   belongs_to :user
-  has_many :join_table_item_orders
+  has_many :join_table_item_orders, dependent: :destroy
   has_many :items, through: :join_table_item_orders
 
   private

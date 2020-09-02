@@ -6,4 +6,11 @@ Rails.application.routes.draw do
   resources :orders
   resources :items
   root to: "items#index"
+
+  namespace :admin do
+    resources :users
+    resources :items
+    resources :orders, only: [:index, :destroy]
+  end
+
 end
