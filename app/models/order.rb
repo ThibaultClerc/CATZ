@@ -10,14 +10,12 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :join_table_item_orders
   has_many :items, through: :join_table_item_orders
-<<<<<<< HEAD
 
   private
 
   def new_order_mail
     OrderMailer.new_order_mail_to_client(self).deliver_now
+    #OrderMailer.new_order_mail_to_admin(self).deliver_now #En attente de la création de la partie admin/commerçant
   end
   
-=======
->>>>>>> develop
 end

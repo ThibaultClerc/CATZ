@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
@@ -8,11 +17,11 @@
     <p>
       Nous vous confirmons la bonne réception de la commande n°<%= @order.id %> en date du <%= @order.created_at %>
     </p>
-    <table>
+    <table class="table">
       <thead>
         <tr>
-          <th>Désignation</th>
-          <th>Prix</th>
+          <th scope="col">Désignation</th>
+          <th scope="col">Prix</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +34,7 @@
       </tbody>
     </table>
     <p>
-      Pour accéder à votre espace client, connectez-vous via : <%= @url %>.
+      Pour accéder à votre espace client, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.
     </p>
     <p> À très vite sur Catz Temple !
   </body>
