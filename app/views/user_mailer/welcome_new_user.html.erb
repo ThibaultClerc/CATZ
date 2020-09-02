@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Bonjour <%= @user.first_name %> et bienvenue chez Catz Temple !</h1>
+    <p>
+      Vous êtes inscrit sur Catz Temple en utilisant l'e-mail suivant : <%= @user.email %>.
+    </p>
+    <p>
+      Pour accéder à votre espace client, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.
+    </p>
+    <p> À très vite sur Catz Temple !
+  </body>
+</html>
