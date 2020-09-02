@@ -19,7 +19,7 @@
                 </tr>
               <% end %>
           </tbody>
-        </table> 
+        </table>
       </div>
       <div class="col-4 bg-light p-4 align-content-between flex-wrap">
         <h4><strong>Total de la commande :</h4>
@@ -27,29 +27,29 @@
       </div>
     </div>
 
-    <div class="row border-bottom pt-3 pb-3 pl-0 pr-0 align-middle">
+    <div class="row pt-3 pb-3 pl-0 pr-0 align-middle">
       <div class="col-8 p-0 m-0"></div>
-      <div class="col-4 p-0 m-0">
-        <%= link_to "Commander", root_path, class: "btn btn-primary btn-lg w-100 h-100"%>
+      <div class="col-4 p-0 m-0 text-center">
+        <%= form_tag orders_path(:cart_id => @cart.id, :total_price => @total_price) do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="Paiement de la commande"
+                  data-amount="<%= @total_price*100 %>"
+                  data-currency='eur'
+                  data-label = "Commander"
+                  data-locale="auto">
+          </script>
+          
+
+        <% end %>
       </div>
     </div>
 </div>
-
-<%= form_tag orders_path(:cart_id => @cart.id, :total_price => @total_price) do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $5.00</span>
-    </label>
-  </article>
-
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-<% end %>
