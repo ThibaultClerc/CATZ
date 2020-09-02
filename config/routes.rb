@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :carts
   resources :orders
   resources :items
+  resources :join_table_item_carts, only: [:create, :destroy]
   root to: "items#index"
 end
