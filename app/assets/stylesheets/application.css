@@ -16,9 +16,8 @@
  */
 
 .cat-hero-index-image {
-  background-image: url("main-cat-pic.jpg");
+  background-image: url("https://catz-temple.s3.eu-central-1.amazonaws.com/main-cat-pic.jpg");
   background-size: cover;
-  /* height: 100%; */
 }
 
 button.stripe-button-el,

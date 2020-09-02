@@ -9,13 +9,15 @@
 require 'faker'
 Faker::Config.locale = 'fr'
 
+a = 0
 10. times do
   Item.create!(
     title:       Faker::Hipster.sentence,
     description: Faker::Hipster.paragraph,
     price:       rand(20..100),
-    image_url:   "http://www.catsinsinks.com/cats/rotator.php"
+    image_url:   "https://catz-temple.s3.eu-central-1.amazonaws.com/#{a}.jpg"
   )
+  a += 1
 end
 
 puts "#{Item.all.count} photos de chats créées"
