@@ -40,14 +40,15 @@
           </article>
 
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          style="display: none;"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
                   data-description="Paiement de la commande"
                   data-amount="<%= @total_price*100 %>"
                   data-currency='eur'
                   data-label = "Commander"
+                  data-image="https://thumbs.dreamstime.com/t/cash-currency-euro-money-price-shopping-outline-icon-signs-symbols-can-be-used-web-logo-mobile-app-ui-ux-white-146328719.jpg"
                   data-locale="auto">
           </script>
-          
 
         <% end %>
       </div>
