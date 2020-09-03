@@ -13,13 +13,41 @@
               <td></td>
             </tr>
           </thead>
+
           <tbody>
+              <% i=0 %>
               <% @cart.items.each do |item| %>
                 <tr class="row">
                   <td class="col-3"><img src="<%= item.image_url %>"  alt="" class="w-50 h-auto rounded"></td>
                   <td class="col-3"><h6><%= item.title %></h6></td>
                   <td class="col-2"><h5 class="mt-3 mb-3"><%= item.price %> €</h5></td>
-                  <td class="col-2"><%= JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: item.id).quantity %></td>
+                    <%= item.id %>
+                  <td class="col-2">
+                  <form>
+                      <% i+=1 %>
+                    <input type="number" id="quantity" name="quantity<%=item.id%>" min="1" max="5" value= "1">
+                    <input type="submit" value="Submit">
+                  </form>
+                  <%= "quantité en base" %>
+                  <%= JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: item.id).quantity %>
+                  </td>
+
+                  <%= item.id %>
+                  <% q= request.original_url.split('').last %>
+                  <%= itemid= request.original_url.slice(request.original_url.length - 3)%>
+                  <% if JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: itemid) != nil %>
+
+                    <% JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: itemid).update(quantity: q) %>
+                    <%= JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: itemid).quantity %>
+
+                  <% end %>
+                  <% q= 0 %>
+
+
+                  <!-- récupérer la valeur du form
+                  JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: item.id).quantity = cette valeur -->
+
+
                   <td class="col-2"><%= link_to "", join_table_item_cart_path(item.join_table_item_carts.find_by(cart_id: @cart.id), :cart_id => @cart.id, :item_id => item.id), method: :delete, class: "fas fa-times text-decoration-none" %></td>
                 </tr>
               <% end %>
@@ -55,6 +83,11 @@
                   data-locale="auto">
           </script>
 
+          <script>
+            var x = document.getElementById("quantity");
+            console.log(x.value);
+
+          </script>
         <% end %>
       </div>
     </div>

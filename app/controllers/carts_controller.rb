@@ -3,11 +3,15 @@ class CartsController < ApplicationController
   before_action :is_current_user_profile_page?, only: [:show]
 
   def show
+    puts "L"*67
+    puts params
+    puts "L"*67
     @user = current_user
     @cart = Cart.find(params[:id])
     @total_price = 0
     @cart.items.each do |item|
-      @total_price += item.price 
+      item_qty = JoinTableItemCart.where("cart_id = #{current_user.id}").find_by(item_id: item.id).quantity
+      @total_price += (item.price  * item_qty)
     end
   end
 
@@ -24,7 +28,7 @@ class CartsController < ApplicationController
       redirect_to root_path
     end
   end
-  
+
   def item_params
     params.permit(:item_id)
   end
