@@ -23,10 +23,10 @@
                   <td class="col-3"><h6><%= item.title %></h6></td>
                   <td class="col-2"><h5 class="mt-3 mb-3"><%= item.price %> €</h5></td>
                   <td class="col-2">
-                  <form class="mx-auto text-center">
+                  <form action="/carts/<%=current_user.id%>" class="mx-auto text-center">
                       <% i+=1 %>
                     <input class="mb-1" type="number" id="quantity" name="quantity<%=item.id%>" min="1" max="5" value= "1">
-                    <input type="submit" value="Ajouter">
+                    <input type="submit" value="Ajouter" onClick="javascript:document.form.submit();">
                   </form>
                   <div class="text-center">
                     <%= "Item dans le panier : " %>
