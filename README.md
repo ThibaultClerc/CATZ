@@ -1,22 +1,24 @@
-# Catz Temple
+<h1 align="center">
+  <br>
+  <a href="https://www.youtube.com/watch?v=Yj7ja6BANLM&frags=pl%2Cwn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRE2MAo_4WEdPB14X9kzt3ZkxzOaScIohciIw&usqp=CAU" alt="Kitteh" width="200"></a>
+  <br>
+  Catz Temple
+  <br>
+  <br>
+   :smiley_cat::smiley_cat::smiley_cat::smiley_cat::smiley_cat::smiley_cat::smiley_cat::smiley_cat:
+  <br>
+</h1>
 
-This is a site that is an exercise based on selling photos of cats.
-
-Things you may want to cover:
+**Catz Temple** is a Ruby on Rails training website based on selling photos of cats.
 
 * The link for the site can be found on heroku at: 
+  * https://production-cats.herokuapp.com/
 
-* Make sure that youŕe using Ruby version 2.5.1.  
-
-* After downloading, follow the steps to initialise the database with
-$ rails db:migrate
-$ rails db:seed
-
-Now you can run the application
+* Make sure that you're using Ruby version 2.5.1.  
 
 * This app was done collaboratively by : 
-Damien Banville,
-Anthory Barnoin,
-Thibault Clerc,
-Hugo Péran Séjourné, and 
-Daniel Stavroff
+  * Daniel Stavroff
+  * Damien Banville
+  * Anthony Barnoin
+  * Thibault Clerc
+  * Hugo Péran Séjourné
