@@ -1,31 +1,33 @@
 <div class="jumbotron text-center">
   <h1 class="display-3">Mon panier</h1>
 </div>
-<div class="container">
-    <div class="row">
-      <div class="col-8 bg-light p-0 d-inline-flex">
-        <table class="table table-hover">
+
+<div class="container p-0">
+    <div class="row ml-0">
+      <div class="col-8 p-0 d-inline-flex">
+      
+        <table class="table">
           <thead>
-            <tr class="table-active">
-              <th>Photo</th>
-              <td>Titre</td>
-              <td>Prix</td>
-              <td></td>
+            <tr class="table-active row mr-0 ml-0">
+              <td class="col-3"><strong>Photo</strong></td>
+              <td class="col-5">Titre</td>
+              <td class="col-2">Prix</td>
+              <td class="col-2"></td>
             </tr>
           </thead>
           <tbody>
               <% @cart.items.each do |item| %>
-                <tr class="row">
+                <tr class="row w-100 mr-0 ml-0">
                   <td class="col-3"><img src="<%= item.image_url %>"  alt="" class="w-50 h-auto rounded"></td>
-                  <td class="col-5"><h6><%= item.title %></h6></td>
+                  <td class="col-5"><h6 class="mt-3 mb-3"><%= item.title %></h6></td>
                   <td class="col-2"><h5 class="mt-3 mb-3"><%= item.price %> €</h5></td>
-                  <td class="col-2"><%= link_to "", join_table_item_cart_path(item.join_table_item_carts.find_by(cart_id: @cart.id), :cart_id => @cart.id, :item_id => item.id), method: :delete, class: "fas fa-times text-decoration-none" %></td>
+                  <td class="col-2"><%= link_to "", join_table_item_cart_path(item.join_table_item_carts.find_by(cart_id: @cart.id), :cart_id => @cart.id, :item_id => item.id), method: :delete, class: "fas fa-times text-decoration-none mt-3 mb-3" %></td>
                 </tr>
               <% end %>
           </tbody>
         </table>
       </div>
-      <div class="col-4 bg-light p-4 align-content-between flex-wrap">
+      <div class="col-4 bg-light p-4 align-content-between flex-end">
         <h4><strong>Total de la commande :</h4>
         <h3><strong><%= @total_price %> €</h3>
       </div>
