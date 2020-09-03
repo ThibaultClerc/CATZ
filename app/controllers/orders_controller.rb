@@ -1,12 +1,5 @@
 class OrdersController < ApplicationController
 
-  def index
-    @orders = Order.all
-  end
-
-  def new
-  end
-
   def create
     @amount = order_params[:total_price].to_i*100 # amount in cents
     @cart = Cart.find(order_params[:cart_id])

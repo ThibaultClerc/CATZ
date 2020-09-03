@@ -1,0 +1,33 @@
+<div class="container mt-5">
+
+  <h1 class="text-center mb-5">Modification d'un profil utilisateur</h1>
+
+  <%= form_for(@user, url: admin_user_path(@user.id)) do |f| %>
+
+    <div class="field form-group">
+      <%= f.label :first_name, "Prénom utilisateur :" %><br>
+      <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :last_name, "Nom utilisateur :" %><br>
+      <%= f.text_field :last_name, autocomplete: "last_name", class: "form-control" %>
+    </div>
+    
+    <div class="field form-group">
+      <%= f.label :email, "Email utilisateur :" %><br>
+      <%= f.text_field :email, autocomplete: "email", class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :admin, "Administrateur ?" %>
+      <%= f.check_box :admin, class: "ml-2" %>
+    </div>
+
+    <div class="actions text-right">
+      <%= f.submit "Mettre à jour", class: "btn btn-primary" %>
+    </div>
+
+  <%end%>
+
+</div>

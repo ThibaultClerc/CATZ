@@ -7,4 +7,12 @@ Rails.application.routes.draw do
   resources :items
   resources :join_table_item_carts, only: [:create, :destroy]
   root to: "items#index"
+
+  namespace :admin do
+    root to: "index#index"
+    resources :users
+    resources :items
+    resources :orders, only: [:index, :destroy]
+  end
+
 end
