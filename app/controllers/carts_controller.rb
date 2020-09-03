@@ -15,6 +15,7 @@ class CartsController < ApplicationController
     @cart_of_user = User.find(current_user.id).cart
     @cart_of_user.items << Item.find(item_params[:item_id])
     flash[:success] = flash[:success] = "Ce produit a été ajouté au panier."
+    redirect_to root_path
   end
 
   private
