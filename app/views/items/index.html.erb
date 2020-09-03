@@ -11,11 +11,11 @@
 <div class="container">
   <div class="card-group">
     <% @items.each do |item|%>
-      <div class="col-md-4 mt-2 mt-sm-0 card-container mb-3">
+      <div class="col-md-4 mt-2 mt-sm-0 card-container mb-3 tex">
         <div class="card text-center product p-4 pt-5 border-0 h-100 rounded-0 cat-card-index shadow">
-          <img class="img-fluid d-block mx-auto" src="<%= item.image_url %>" alt="Pilot Aviator Glasses Gear Image">
+          <a href="/items/<%=item.id%>"><img class="img-fluid d-block mx-auto" src="<%= item.image_url %>" alt="Pilot Aviator Glasses Gear Image"></a>
           <div class="card-body p-4 py-0 h-xs-440p">
-            <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto"><%= item.title %></h5>
+            <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto"><%= link_to item.title, item_path(item.id), style: "text-decoration: none !important;"%></h5>
             <h6><%= item.price %> €</h6>
           </div>
           <p class="btn w-100 px-4 mx-auto">
