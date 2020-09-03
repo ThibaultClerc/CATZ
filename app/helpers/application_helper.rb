@@ -8,7 +8,7 @@ module ApplicationHelper
     case type
       when 'notice' then "alert-info"
       when 'success' then "alert-success"
-      when 'error' then "Veuillez saisir un nom et un mot de passe valid."
+      when 'error' then "alert-danger"
       when 'alert' then "alert-warning"
     end
   end

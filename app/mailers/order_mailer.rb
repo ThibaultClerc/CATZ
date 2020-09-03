@@ -6,16 +6,13 @@ class OrderMailer < ApplicationMailer
     mail(to: @order.user.email, subject: "Confirmation de commande n°#{order.id}") 
   end
 
-=begin 
-
-  En attente de la création de la partie admin/commerçant
-
   def new_order_mail_to_admin(order)
     @order = order
-    @url  = 'https://production-cats.herokuapp.com/login' 
-    mail(to: @order.user.email, subject: "Confirmation de commande n°#{order.id}") 
+    @url  = 'https://production-cats.herokuapp.com/admin' 
+
+    admins = User.where(admin: true)
+    admins.each do |admin|
+      mail(to: admin.email, subject: "Nouvelle commande n°#{order.id}") 
+    end
   end
-
-=end
-
 end
