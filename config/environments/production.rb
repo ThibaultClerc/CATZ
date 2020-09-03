@@ -95,5 +95,5 @@ Rails.application.configure do
   config.logger = Logger.new(STDOUT)
 
   config.action_mailer.default_url_options = { :host => 'production-cats.herokuapp.com' }
-  config.action_mailer.perform_deliveries = false
+  config.action_mailer.perform_deliveries = true
 end
