@@ -31,6 +31,8 @@ puts "#{Item.all.count} photos de chats créées"
   )
 end
 
+User.create!(email: 'admin@admin.fr', password: "azerty", first_name: 'admin', last_name: 'admin', admin: true)
+
 puts "#{User.all.count} users created"
 
 j=1
