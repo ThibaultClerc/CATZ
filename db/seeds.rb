@@ -12,7 +12,7 @@ Faker::Config.locale = 'fr'
 a = 0
 10. times do
   Item.create!(
-    title:       Faker::Hipster.sentence,
+    title:       Faker::FunnyName.unique.name,
     description: Faker::Hipster.paragraph,
     price:       rand(20..100),
     image_url:   "https://catz-temple.s3.eu-central-1.amazonaws.com/#{a}.jpg"
