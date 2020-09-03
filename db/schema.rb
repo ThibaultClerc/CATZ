@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_01_124227) do
+ActiveRecord::Schema.define(version: 2020_09_03_071309) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_124227) do
     t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
     t.index ["cart_id"], name: "index_join_table_item_carts_on_cart_id"
     t.index ["item_id"], name: "index_join_table_item_carts_on_item_id"
   end
