@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Catz Temple</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active"></li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+    <% if !user_signed_in? %>
+      <%= link_to "S'inscrire", new_user_registration_path, class: "btn btn-light mr-3" %>
+      <%= link_to "Connexion", new_user_session_path, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to cart_path(current_user.id), class: " mr-3 rounded btn btn-light" do%>
+        <%= current_user.cart.items.count %> <i class="fas fa-shopping-cart text-secondary"></i>
+      <% end %>
+      <% if current_user.admin == true %> <%= link_to "Dashboard Admin", admin_root_path, class: "btn btn-primary mr-3" %> <% end %>
+      <%= link_to "Mon profil", user_path(current_user.id), class: "btn btn-light mr-3" %>
+      <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+    <% end %>
+    </form>
+  </div>
+</nav>

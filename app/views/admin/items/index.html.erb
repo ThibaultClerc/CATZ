@@ -1,0 +1,28 @@
+<div class="container mt-5">
+  <h1 class="text-center">Liste des articles</h1>
+
+  <table class="table text-center mt-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Description</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Edition</th>
+        <th scope="col">Suppression</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <th scope="row"><%= item.id %></th>
+          <td><%= item.title %></td>
+          <td><%= item.description %></td>
+          <td><%= item.price %>€</td>
+          <td><%= link_to "Editer", edit_admin_item_path(item.id), class: "btn btn-primary" %></td>
+          <td><%= link_to "Supprimer", admin_item_path(item.id), method: :delete, class: "btn btn-danger" %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

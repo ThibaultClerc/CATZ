@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <h1 class="text-center">Gestion des commandes</h1>
+
+  <table class="table text-center mt-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Utilisateur</th>
+        <th scope="col">Articles</th>
+        <th scope="col">Prix</th>
+        <th scope="col">Suppression</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <th scope="row"><%= order.id %></th>
+          <td><%= order.user.first_name %> <%= order.user.last_name %></td>
+          <td>
+            <ul class="text-left">
+              <% order.items.each do |item| %>
+                <li><%= item.title %></li>
+              <% end %>
+            </ul>
+          </td>
+          <td><%= order.price %>€</td>
+          <td><%= link_to "Supprimer", admin_order_path(order.id), method: :delete, class: "btn btn-danger" %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>

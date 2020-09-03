@@ -1,24 +1,22 @@
-# README
+# Catz Temple
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a site that is an exercise based on selling photos of cats.
 
 Things you may want to cover:
 
-* Ruby version
+* The link for the site can be found on heroku at: 
 
-* System dependencies
+* Make sure that youŕe using Ruby version 2.5.1.  
 
-* Configuration
+* After downloading, follow the steps to initialise the database with
+$ rails db:migrate
+$ rails db:seed
 
-* Database creation
+Now you can run the application
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* This app was done collaboratively by : 
+Damien Banville,
+Anthory Barnoin,
+Thibault Clerc,
+Hugo Péran Séjourné, and 
+Daniel Stavroff

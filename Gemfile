@@ -64,7 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'table_print'
 gem 'faker'
-gem 'dotenv'
+gem 'dotenv-rails'
 gem 'devise'
 gem 'activerecord-reset-pk-sequence'
 gem 'rails-erd'
@@ -75,3 +75,6 @@ group :development do
   gem "binding_of_caller"
   gem 'letter_opener'
 end
+
+gem "aws-sdk-s3", require: false
+

@@ -1,0 +1,30 @@
+
+<div class="container mx-auto mt-5">
+  <div class="row mt-5 mx-auto bg-light" style="border-radius: 10px;">
+    <div class="event-haut row mt-3">
+
+
+      <div class="col-1 ">
+      </div>
+
+      <div class="image-haut-event col-4 mr-5" >
+        <img src="<%= @item.image_url %>" width="100%" height="90%" style="border-radius: 10px;"  alt="">
+      </div>
+
+      <div class="event-text col-6">
+        <h3><%= @item.title %></h3>
+        <h5 class="mt-3 mb-3"><%= @item.price %> €</h5>
+        <p><%= @item.description %></p>
+
+        <hr>
+        <% if current_user.present? %>
+          <%= link_to "Ajouter au panier", cart_path(current_user.id, :item_id => @item.id), method: :put, class: "btn btn-primary mx-auto ml-3" %>
+        <% else %>
+          <%= link_to "Ajouter au panier", new_user_registration_path, class: "btn btn-primary mx-auto ml-3" %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+

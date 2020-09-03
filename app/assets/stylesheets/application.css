@@ -14,3 +14,27 @@
  *= require_tree .
  *= require_self
  */
+
+.cat-hero-index-image {
+  background-image: url("https://catz-temple.s3.eu-central-1.amazonaws.com/main-cat-pic.jpg");
+  background-size: cover;
+}
+
+button.stripe-button-el,
+button.stripe-button-el>span {
+  padding-top: 3px;
+  background-image: none;
+  border-radius: 12px !important;
+  font-size: x-large;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  outline-style: none;
+}
+
+.cat-card-index:hover {
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background: #f7f7f7
+}
