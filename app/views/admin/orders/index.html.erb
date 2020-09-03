@@ -17,7 +17,7 @@
           <th scope="row"><%= order.id %></th>
           <td><%= order.user.first_name %> <%= order.user.last_name %></td>
           <td>
-            <ul>
+            <ul class="text-left">
               <% order.items.each do |item| %>
                 <li><%= item.title %></li>
               <% end %>

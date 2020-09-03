@@ -1,0 +1,11 @@
+<div class="container text-center mt-5">
+  <h1>Dashboard Administrateur</h1>
+  <br>
+  <p>Bonjour, <%=current_user.first_name %> </p> <br>
+  <p><strong>Bienvenue dans le dashboard administrateur</strong></p> <br>
+  <p class="font-italic">Vous pouvez accéder à la gestion des éléments suivants :</p>
+  <a class="btn btn-danger" href="<%=admin_users_path %>">Gestion des utilisateurs</a>
+  <a class="btn btn-success" href="<%=admin_items_path %>">Gestion des articles</a>
+  <a class="btn btn-primary" href="<%=admin_orders_path %>">Gestion des commandes</a>
+</div>
+

@@ -1,4 +1,6 @@
 class Admin::ItemsController < ApplicationController
+  before_action :is_admin?
+
   def index
     @items = Item.all
   end
