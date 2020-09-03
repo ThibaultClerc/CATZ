@@ -14,28 +14,11 @@
   </head>
   <body>
     <h1>Nouvelle commande n°<%= @order.id %></h1>
-    <p>
-      Une nouvelle commande est arrivée. Commande n°<%= @order.id %> en date du <%= @order.created_at %>
-    </p>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Désignation</th>
-          <th scope="col">Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order.items.each do |item| %>
-          <tr>
-            <td><%= item.title %></td>
-            <td><%= item.price %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <p>
-      Pour accéder à votre espace admin, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.
-    </p>
+    <br>
+    <p> Une nouvelle commande est arrivée. Commande n°<%= @order.id %> en date du <%= @order.created_at %> </p>
+    <br>
+    <p>Pour accéder à votre espace admin, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.</p>
+    <br>
     <p> À très vite sur Catz Temple ! </p>
   </body>
 </html>

@@ -2,7 +2,7 @@ class OrderMailer < ApplicationMailer
 
   def new_order_mail_to_client(order)
     @order = order
-    @url  = 'https://production-cats.herokuapp.com/login' 
+    @url  = "https://production-cats.herokuapp.com/users/#{@order.user.id}"
     mail(to: @order.user.email, subject: "Confirmation de commande n°#{order.id}") 
   end
 
