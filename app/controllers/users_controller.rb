@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   def is_current_user_profile_page?
     if current_user == User.find(params[:id])
     else
-      flash[:error] = "Veuillez entrer un nom et un mot de passe valide"
-      redirect_to root_path, error: "Nom ou mot de passe invalide"
+      redirect_to root_path
     end
   end
   

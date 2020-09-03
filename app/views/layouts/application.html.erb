@@ -12,7 +12,25 @@
 
   <body>
   <%= render 'layouts/navbar' %>
-    <%= render 'layouts/flash'%> <!--alertes added here-->
+  <%= render 'layouts/flash' %>
+  <!--
+  <% if flash[:notice] %>
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:notice] %></p>
+    </div>
+  <% elsif flash[:error] %>
+    <div class="alert alert-error">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:error] %>
+    </div>
+  <% elsif flash[:alert] %>
+    <div class="alert alert-warning">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <%= flash[:alert] %></p>
+    </div>
+  <% end %>
+  -->
       <%= yield %>
   <%= render 'layouts/footer' %>
 
