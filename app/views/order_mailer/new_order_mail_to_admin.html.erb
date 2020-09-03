@@ -13,9 +13,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Confirmation de commande n°<%= @order.id %></h1>
+    <h1>Nouvelle commande n°<%= @order.id %></h1>
     <p>
-      Nous vous confirmons la bonne réception de la commande n°<%= @order.id %> en date du <%= @order.created_at %>
+      Une nouvelle commande est arrivée. Commande n°<%= @order.id %> en date du <%= @order.created_at %>
     </p>
     <table class="table">
       <thead>
@@ -34,7 +34,7 @@
       </tbody>
     </table>
     <p>
-      Pour accéder à votre espace client, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.
+      Pour accéder à votre espace admin, connectez-vous en <a href="<%= @url %>">cliquant ici</a>.
     </p>
     <p> À très vite sur Catz Temple ! </p>
   </body>

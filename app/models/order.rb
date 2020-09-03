@@ -15,7 +15,7 @@ class Order < ApplicationRecord
 
   def new_order_mail
     OrderMailer.new_order_mail_to_client(self).deliver_now
-    #OrderMailer.new_order_mail_to_admin(self).deliver_now #En attente de la création de la partie admin/commerçant
+    OrderMailer.new_order_mail_to_admin(self).deliver_now
   end
   
 end
