@@ -11,16 +11,21 @@
 <div class="container">
   <div class="card-group">
     <% @items.each do |item|%>
-      <div class="col-md-3 col-sm-4">
-        <div class="card mb-3 event-card rounded">
-          <div class="event-card-image-container h-100">
-            <img style="height: 170px; width: 100%; display: block;" src="<%= item.image_url %>" alt="Card image">
+      <div class="col-md-4 mt-2 mt-sm-0 card-container mb-3">
+        <div class="card text-center product p-4 pt-5 border-0 h-100 rounded-0 cat-card-index shadow">
+          <img class="img-fluid d-block mx-auto" src="<%= item.image_url %>" alt="Pilot Aviator Glasses Gear Image">
+          <div class="card-body p-4 py-0 h-xs-440p">
+            <h5 class="card-title font-weight-semi-bold mb-3 w-xl-220p mx-auto"><%= item.title %></h5>
+            <h6><%= item.price %> €</h6>
           </div>
-        <div class="card-body">
-          <h5 class="card-text text-warning mt-3"><%= item.title %></h5>
-          <h3 class="text-truncate"><%= link_to "#{item.description}", item_path(item.id)%></h3>  
+          <p class="btn w-100 px-4 mx-auto">
+          <% if current_user.present? %>
+          <%= link_to "Acheter", cart_path(current_user.id, :item_id => item.id), method: :put, class: "btn btn-dark btn-lg w-100" %>
+        <% else %>
+          <%= link_to "Acheter", new_user_registration_path, class: "btn btn-dark btn-lg w-100" %>
+        <% end %>
+          </p>
         </div>
-      </div>
       </div>
     <% end %>
   </div>
